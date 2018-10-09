@@ -1,0 +1,47 @@
+#! /usr/bin/env perl
+
+use strict;
+use warnings;
+
+my ($op,$x) = @ARGV;
+
+if ( !defined($op) || !defined($x) ) {
+  print "Usage: $0 OP INIT < VALUES\n";
+  exit 1;
+}
+
+sub plus { return $_[0] + $_[1]; }
+sub minus { return $_[0] - $_[1]; }
+sub times { return $_[0] * $_[1]; }
+sub divide { return $_[0] / $_[1]; }
+sub max { if ($_[0] > $_[1]) { return $_[0]; } else { return $_[1]; } }
+sub min { if ($_[0] < $_[1]) { return $_[0]; } else { return $_[1]; } }
+
+my $f;
+if ($op eq "+") {
+  $f = \&plus;
+} elsif ($op eq "-") {
+  $f = \&minus;
+} elsif ($op eq "*") {
+  $f = \&times;
+} elsif ($op eq "/") {
+  $f = \&divide;
+} elsif ($op eq "max") {
+  $f = \&max;
+} elsif ($op eq "min") {
+  $f = \&min;
+} else {
+  print "Unknown op: $op\n";
+  exit 1;
+}
+
+while (<STDIN>) {
+  chomp $_;
+  foreach my $y (split(/[ \t]+/,$_)) {
+    if ( $y ne "" ) {
+      $x = &$f($x,$y);
+    }
+  }
+}
+
+print $x,"\n";

@@ -1,0 +1,58 @@
+Script started on 2018-10-09 11:28:23-0400
+# - size of genome
+replicons: 3
+based: 3395237
+# - number of "proteins" in 6ft
+54618
+#   + number of unique
+54324
+# - number of aa' in 6ft (average length)
+6533671
+#   + number of aa' in unqiue
+6522131
+# - number of tryptic peptides in 6ft (t6ft)
+386147
+#   + number of unique tryptic peptides
+353739
+# - number of aa' in t6ft
+4532056
+#   + number of aa' in unqiue
+4320063
+# - number of t6ft that map to genbank
+52161
+#   + number of unique t6ft that map to genbank
+51918
+# - number of t6ft that map to novel
+511
+#   + number of unique t6ft that map to novel
+511
+
+# total number of peptides identified in the high-value dataset (does not include modifications)
+
+411846
+
+# total number of **unique** peptides identified in the high-value dataset
+
+33212
+
+# how many (unique hv peptides) mapped to genbank CDSs
+
+size of proteome: 3079
+num peptides: 33212
+found peptides: 32760
+
+# how many (unique hv peptides) mapped to novel CDSs
+
+size of proteome: 33
+num peptides: 33212
+found peptides: 246
+
+# peptides mapping to both genbank and novel CDSs (should be 0!)
+
+0
+
+real	0m18.595s
+user	0m18.474s
+sys	0m1.239s
+
+Script done on 2018-10-09 11:28:41-0400

@@ -1,0 +1,27 @@
+#! /bin/bash
+
+PROGNAME=`basename $0`
+PROGDIR=`dirname $0`
+
+$PROGDIR/fasta2tsv "$@" | cut -f2
+
+
+
+# #! /usr/bin/env perl
+
+# use strict;
+# use warnings;
+
+# my $s = "";
+
+# while (<>) {
+#   chomp;
+#   if ( /^>/ ) {
+#     if ( $s ne "" ) { print "$s\n"; }
+#     $s = "";
+#   } else {
+#     $s .= $_;
+#   }
+# }
+
+# if ( $s ne "" ) { print "$s\n"; }
